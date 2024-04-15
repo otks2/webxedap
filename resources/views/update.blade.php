@@ -35,7 +35,7 @@
           </div>
           <div class="form-group">
               <label for="product_author">Author</label>
-              <input type="text" class="form-control" name="product_author" value="{{ $books->product_description }}"/>
+              <input type="text" class="form-control" name="product_author" value="{{ $books->product_author }}"/>
           </div>
 
           <div class="form-group">
