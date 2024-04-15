@@ -21,7 +21,7 @@
         </form>
         </div>
         <div class="float-right">
-            <a href="{{ route('Bicycles.create')}}" class="btn btn-primary btn-lg">Create</a>
+            <a href="{{ route('books.create')}}" class="btn btn-primary btn-lg">Create</a>
         </div>
     </div>
         @if(session()->get('success'))
@@ -35,6 +35,7 @@
           <td>ID</td>
           <td>Product Name</td>
           <td>Description</td>
+          <td>Author</td>
           <td>Price</td>
           <td>Image</td>
           <td>created_at</td>
@@ -43,19 +44,20 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($bicycles as $item)
+        @foreach($books as $item)
         <tr data-id="{{$item->id}}">
             <td>{{$item->id}}</td>
             <td>{{$item->product_name}}</td>
             <td>{{$item->product_description}}</td>
+            <td>{{$item->product_author}}</td>
             <td>{{$item->product_price}}</td>
-            <td><img src="{{ asset('storage/images/' . $item->product_image_url) }}" alt="Product Image"></td>
+            <td><img src="{{ asset('storage/images/' . $item->product_image_url) }}" alt="Product Image" width="240px" height="200px"></td>
             <td>{{$item->created_at}}</td>
             <td>{{$item->updated_at}}</td>
             <td class="text-center">
-                <a href="{{ route('Bicycles.edit', $item->id)}}" class="btn btn-primary btn-sm">Update</a>
+                <a href="{{ route('books.edit', $item->id)}}" class="btn btn-primary btn-sm">Update</a>
 
-                <form action="{{ route('Bicycles.destroy', $item->id)}}" method="post" style="display: inline-block">
+                <form action="{{ route('books.destroy', $item->id)}}" method="post" style="display: inline-block">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger btn-sm" type="submit">Delete</button>

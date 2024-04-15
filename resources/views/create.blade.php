@@ -10,7 +10,7 @@
 </style>
 <div class="card push-top">
   <div class="card-header">
-    Create news
+    Create new book
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -22,7 +22,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('Bicycles.store') }}" enctype="multipart/form-data">
+      <form method="post" action="{{ route('books.store') }}" enctype="multipart/form-data">
           <div class="form-group">
               @csrf
               <label for="product_name">Product Name</label>
@@ -31,6 +31,10 @@
           <div class="form-group">
               <label for="product_description">Description</label>
               <input type="text" class="form-control" name="product_description"/>
+          </div>
+          <div class="form-group">
+              <label for="product_author">Author</label>
+              <input type="text" class="form-control" name="product_author"/>
           </div>
 
           <div class="form-group">
@@ -42,7 +46,7 @@
               <label for="product_price">Image</label>
               <input type="file" class="form-control" name="product_image_url"/>
           </div>
-          <button type="submit" class="btn btn-block btn-danger">Create News</button>
+          <button type="submit" class="btn btn-block btn-danger">Create new</button>
       </form>
   </div>
 </div>

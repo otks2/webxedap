@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\BicycleController;
-use App\Http\Controllers\TintucController;
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('Bicycles', BicycleController::class);
-Route::get('/search', [BicycleController::class, 'search'])->name('search');
+Route::resource('books', BookController::class);
+Route::get('/search', [BookController::class, 'search'])->name('search');
